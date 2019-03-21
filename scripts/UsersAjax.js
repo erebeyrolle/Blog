@@ -6,11 +6,16 @@ function createUser() {
         if (xhr.readyState == 4 && xhr.status == 200)
         // Variables definitions with JSON datas from DB
         {
-            var lastname = (JSON.parse(xhr.response)).lastname;
-            var firstname = (JSON.parse(xhr.response)).firstname;
-            var email = (JSON.parse(xhr.response)).email;
-            var id = (JSON.parse(xhr.response)).id;
-            // 
+            var user = JSON.parse(xhr.response);
+            var lastname= user.lastname;
+            var firstname =user.firstname;
+            var email=user.email;
+            var id= user.id;
+            // var lastname = (JSON.parse(xhr.response)).lastname;
+            // var firstname = (JSON.parse(xhr.response)).firstname;
+            // var email = (JSON.parse(xhr.response)).email;
+            // var id = (JSON.parse(xhr.response)).id;
+            
             var newPar = document.createElement('p');
             newPar.innerHTML = lastname + ' ' + firstname +
                 " <input onclick='showUser(id) 'type='submit' value='Voir'>" +
@@ -46,15 +51,15 @@ function showUser(id) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // On affecte les valeurs en retour du serveur à une variable
             var user = JSON.parse(xhr.response);
-            // Récupération de la valeur de l'input HTML grace à son identifiant, affection à une variable
+            // Récupération de la valeur de l'input HTML grace à son identifiant, affectation à une variable
             var lastname = document.getElementById('lastname');
             // On attribue la valeur récupérée par JSON à l'élément html que l'on veut modifier
             lastname.value = user.lastname;
-            // Récupération de la valeur de l'input HTML grace à son identifiant, affection à une variable
+            // Récupération de la valeur de l'input HTML grace à son identifiant, affectation à une variable
             var firstname = document.getElementById('firstname');
             // On attribue la valeur récupérée par JSON à l'élément html que l'on veut modifier
             firstname.value = user.firstname;
-            //Récupération de la valeur de l'input HTML grace à son identifiant, affection à une variable
+            //Récupération de la valeur de l'input HTML grace à son identifiant, affectation à une variable
             var email = document.getElementById('email');
             // On attribue la valeur récupérée par JSON à l'élément html que l'on veut modifier
             email.value = user.email;
@@ -117,18 +122,21 @@ function updateUser(id) {
             newInput1.setAttribute("onclick", 'showUser(id)');
             newInput1.setAttribute("type", "button");
             newInput1.setAttribute("value", "Voir");
+            //newPar.appendChild(newInput1);
             newPar.appendChild(newInput1);
 
             var newInput2 = document.createElement('input');
             newInput2.setAttribute("onclick", 'updateUser(id)');
             newInput2.setAttribute("type", "button");
             newInput2.setAttribute("value", "Modifier");
+            //newPar.appendChild(newInput2);
             newPar.appendChild(newInput2);
 
             var newInput3 = document.createElement('input');
             newInput3.setAttribute("onclick", 'deleteUser(id)');
             newInput3.setAttribute("type", "button");
             newInput3.setAttribute("value", "Effacer");
+            //newPar.appendChild(newInput3);
             newPar.appendChild(newInput3);
         }
     };

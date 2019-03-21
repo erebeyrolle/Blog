@@ -11,7 +11,7 @@ require_once('../loaderArticles.php');
         $title=htmlspecialchars($title);
         $content=htmlspecialchars($content);
 
-        if($title!="" OR $content!=""){
+        if($title!="" AND $content!=""){
             // Connexion à la base de données
                 $DataBase=connectDB();
 

@@ -3,21 +3,32 @@
 function addArticle() {
     var xhr = new XMLHttpRequest();
 
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function() 
+    {
         if (xhr.readyState == 4 && xhr.status == 200)
         // Variables definitions with JSON datas from DB
-        {
-            var title = (JSON.parse(xhr.response)).title;
-            var content = (JSON.parse(xhr.response)).content;
-            var id = (JSON.parse(xhr.response)).id;
+        {if((JSON.parse(xhr.response))._success)
+            {
+            var article = (JSON.parse(xhr.response))._object;
+            var title = article.title;
+            var content = article.content;
+            var id = article.id;
+            // var title = (JSON.parse(xhr.response)).title;
+            // var content = (JSON.parse(xhr.response)).content;
+            // var id = (JSON.parse(xhr.response)).id;
             //
             var newPar = document.createElement('p');
             newPar.innerHTML = "Titre: " + title + " => Contenu article: " + content;
 
             var elementParent = document.getElementById('parentNode');
             elementParent.appendChild(newPar);
-
+            }else
+            {
+                var alert=document.getElementById('alert');
+                alert.innerHTML=(JSON.parse(xhr.response))._message;
+            }
         }
+        
     };
 
 

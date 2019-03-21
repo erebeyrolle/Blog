@@ -25,6 +25,7 @@
             </tr>
             <tr>
                 <td><label for="content">ARTICLE</label> : </td>
+                <td> <div id="alert"></div></td>
                 <td>
                     <textarea name="content" id="content" rows="10" cols="20">
                     </textarea>
