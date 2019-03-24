@@ -68,18 +68,25 @@
             Cras in nibh id augue tincidunt blandit sed in sem.
             Nullam eu arcu nunc. Curabitur consectetur ultricies turpis, et faucibus purus rutrum eu.
             Etiam rutrum et enim vel sollicitudin.
-        </article>
-        <form>
+        </article><br/><br/>
+
+        <form class="pos_items">
             <div class="form-group">
-                
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                
+                <label for="formGroupExampleInput">Last Name</label>
+                <input type="text" class="form-control-md" id="formGroupExampleInput" placeholder="First Name">
             </div>
             <div class="form-group">
-                
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="formGroupExampleInput">First Name</label>
+                <input type="text" class="form-control-md" id="formGroupExampleInput" placeholder="Last Name">
             </div>
-            
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control-md" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Commentaire Article</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
             <button id="OKbtn" class="btn btn-primary">Post Comments</button>
         </form>
     </section>
@@ -101,6 +108,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous"></script>
-    <script src="jQueryAjax.js"></script>
+    <script src="scripts/jQueryAjax.js"></script>
 </body>
 </html>

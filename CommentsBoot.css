@@ -1,3 +1,29 @@
-.align{
-    text-align:center;
+.align {
+    text-align: center;
+}
+
+.form-group {
+    text-align: center;
+    margin-left: 100em;
+}
+
+.btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-inline,
+.btn {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 10px;
 }
